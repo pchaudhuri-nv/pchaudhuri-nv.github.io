@@ -1,6 +1,6 @@
 baseURL = 'https://pchaudhuri-nv.github.io/'
 languageCode = 'en-us'
-title = 'Prerona'
+title = 'Toigian'
 theme = "hugo-toigian"
 themesDir = "../.."
 enableGitInfo = true
@@ -20,8 +20,8 @@ toc = true
 comments = true
 
 [params.author]
-name = "Prerona Chaudhuri"
-email = "chaudhuri.prerona98@gmail.com"
+name = "Kien Nguyen-Tuan"
+email = "kiennt2609@gmail.com"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -53,12 +53,6 @@ email = "chaudhuri.prerona98@gmail.com"
   url = "/posts"
   weight = 3
 
-  [[menu.nav]]
-  name = "Tech Talk"
-  url = "/talks"
-  weight = 3
-  
-
 [build]
   writeStats = true
 
@@ -67,4 +61,3 @@ email = "chaudhuri.prerona98@gmail.com"
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
-
