@@ -1,0 +1,37 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install theme dependencies
+        run: |
+          cd themes/hugo-toigian && npm install
+      - uses: actions/setup-hugo@v3
+        with:
+          hugo-version: '0.121.1'
+          extended: true
+      - name: Build site
+        run: hugo --gc --minify
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          branch: gh-pages
+          folder: public
