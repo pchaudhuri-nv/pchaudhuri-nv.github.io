@@ -1,8 +1,10 @@
 baseURL = 'https://pchaudhuri-nv.github.io/'
 languageCode = 'en-us'
-title = 'Toigian'
+
+title = 'PerkyPrerona'
+
 theme = "hugo-toigian"
-themesDir = "../.."
+#themesDir = "../.."
 enableGitInfo = true
 
 # (Optional) If you provide a Disqus shortname, comments will be enabled on
@@ -12,49 +14,89 @@ enableGitInfo = true
 [params]
 # (Optional, default true): Controls table of contents visibility on right side of pages.
 # Start and end levels can be controlled with markup.tableOfContents setting.
-toc = true
+  toc = true
 # (Optional, default true) Enables comments template on pages
 # By default partials/docs/comments.html includes Disqus template
 # See https://gohugo.io/content-management/comments/#configure-disqus
 # Can be overwritten by same param in page frontmatter
-comments = true
+  comments = true
+  contentTypeName = "posts"
+  defaultTheme = "dark"
+  showMenuItems = 2
+  # Show reading time in minutes for posts
+  showReadingTime = true
+  # Set it to true if need arises
+  ShowFullTextinRSS = false
 
-[params.author]
-name = "Kien Nguyen-Tuan"
-email = "kiennt2609@gmail.com"
+[params.profileMode]
+enabled = true             # DISABLED
+title = "Prerona Chaudhuri"
+subtitle = "Explorer & Observer"
+#imageUrl = "/images/profile.jpeg" # optional
+#imageTitle = "Profile image" # optional
+#imageWidth = 120
+#imageHeight = 120  
 
-[markup]
-  defaultMarkdownHandler = "goldmark"
-  # By default, Goldmark trims unsafe outputs which might prevent some shortcodes from rendering.
-  # It is recommended to set markup.goldmark.renderer.unsafe=true if you encounter problems.
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true  # Enable user to embed HTML snippets in Markdown content.
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = false
-    noClasses = false
-    tabWidth = 4
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 4
-    ordered = true
+[[params.socialIcons]]
+name = "Github"
+url = "https://github.com/pchaudhuri-nv"
 
-# The left side navbar at the top
-[menu]
-  [[menu.nav]]
-  name = "About"
-  url = "/about"
-  weight = 2
+[[params.socialIcons]]
+name = "email"
+url = "mailto:chaudhuri.prerona98@gmail.com"
 
-  [[menu.nav]]
-  name = "Posts"
-  url = "/posts"
-  weight = 3
+[[params.socialIcons]]
+name = "LinkedIn"
+url = "https://in.linkedin.com/in/prerona-chaudhuri-893091141"
 
-[build]
-  writeStats = true
+
+[languages]
+  [languages.en]
+    title = "Interpreting compilers"
+    # subtitle = ""
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    writtenBy = "Written by"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    minuteReadingTime = "min read"
+    dateFormatSingle = "2006-01-02"
+    dateFormatList = "2006-01-02"
+    # leave empty to disable, enter display text to enable
+    # lastModDisplay = ""
+
+    [languages.en.params.logo]
+      logoText = "hello friend"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "blog"
+        name = "Tech Musings"
+        url = "/posts"
+      [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/"
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "initiatives"
+        name = "Initiatives"
+        url = "/initiatives"
+#      [[languages.en.menu.main]]
+#        identifier = "llvm"
+#        name = "LLVM Contributions"
+#        url = "https://reviews.llvm.org/p/yassingh/"
 
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
